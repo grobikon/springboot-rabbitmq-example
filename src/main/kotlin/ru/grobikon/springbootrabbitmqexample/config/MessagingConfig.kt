@@ -13,6 +13,10 @@ import ru.grobikon.springbootrabbitmqexample.constant.*
 @Configuration
 class MessagingConfig {
 
+    companion object{
+        const val QUEUE1 = "test"
+    }
+
     /**
      * Очередь
      */

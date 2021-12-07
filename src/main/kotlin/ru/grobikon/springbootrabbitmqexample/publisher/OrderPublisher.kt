@@ -25,7 +25,7 @@ class OrderPublisher(
             //2 отправиться в платёжную службу payment service, выполняться логика оплаты
         //Но мы не хотим, чтобы пользователь ждал так долга пока будут выполняться эти сервисы 1 и 2
         //Мы будем отправлять пользователю сообщение прогресс - progress
-        val orderStatic = OrderStatus(order, "Обрабатывается", "заказ успешно размещен $restaurantName")
+        val orderStatic = OrderStatus(order, "Обрабатывается", "заказ успешно размещен в $restaurantName")
         //теперь orderStatic отправим в очередь RabbitMQ
         //и это сообщение получит очереди которые связаны с EXCHANGE по ключу ROUTING_KEY
         rabbitTemplate.convertAndSend(EXCHANGE, ROUTING_KEY, orderStatic)
